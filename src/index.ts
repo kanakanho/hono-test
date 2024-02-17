@@ -3,6 +3,10 @@ import { Hono } from "hono";
 const app = new Hono();
 
 app.get("/", (c) => {
+    return c.text("Hello, World!");
+});
+
+app.get("/head/", (c) => {
     // ヘッダーの中身を確認
     console.log(c);
     console.log(c.req.raw.headers);
