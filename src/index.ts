@@ -20,4 +20,10 @@ app.get("/head/", (c) => {
     return c.text(auth);
 });
 
+app.get("/number/", (c) => {
+    // 1~10の乱数を返す
+    const number = Math.floor(Math.random() * 10) + 1;
+    return c.json({ number: number });
+});
+
 export default app;
