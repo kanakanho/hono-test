@@ -102,8 +102,10 @@ const mizuno: Lab = {
 const randomLab = (): LabType => {
     const names = [kaji, ito, naito, rohei, sawano, matsukawa, mizuno];
     // ランダムな研究室をランダムな数返す
-    const number = Math.floor(Math.random() * names.length);
-    const labs = names.slice(0, number);
+    const labs: Lab[] = [];
+    for (let i = 0; i < Math.floor(Math.random() * 10) + 1; i++) {
+        labs.push(names[Math.floor(Math.random() * names.length)]);
+    }
     return { objects: labs };
 };
 
